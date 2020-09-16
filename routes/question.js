@@ -19,8 +19,10 @@ router.post("/", async (req, res) => {
   try {
     const savedQuestion = await question.save();
     res.json(savedQuestion);
+    console.log(req.body);
   } catch (err) {
     res.json({ message: err });
+    console.log(req.body);
   }
 });
 
