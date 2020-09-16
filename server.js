@@ -5,12 +5,14 @@ if (process.env.NODE_ENV !== "production") {
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const indexRoute = require("./routes/index");
 const questionRoute = require("./routes/question");
 
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cors);
 app.use("/", indexRoute);
 app.use("/questions", questionRoute);
 
