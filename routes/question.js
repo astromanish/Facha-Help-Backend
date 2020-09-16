@@ -5,7 +5,11 @@ const router = express.Router();
 router.get("/", async (req, res) => {
   try {
     const questions = await Question.find();
+    res.header({
+      "Access-Control-Allow-Origin": "*",
+    });
     res.json(questions);
+    console.log(res.header);
   } catch (err) {
     res.json({ message: err });
   }
@@ -18,11 +22,12 @@ router.post("/", async (req, res) => {
   });
   try {
     const savedQuestion = await question.save();
+    res.header({
+      "Access-Control-Allow-Origin": "*",
+    });
     res.json(savedQuestion);
-    console.log(req.body);
   } catch (err) {
     res.json({ message: err });
-    console.log(req.body);
   }
 });
 
