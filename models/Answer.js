@@ -11,4 +11,4 @@ const AnswerSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.modal("Answer", AnswerSchema);
+module.exports = mongoose.model("Answer", AnswerSchema);
