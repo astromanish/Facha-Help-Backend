@@ -20,11 +20,11 @@ router.post("/", async (req, res) => {
     q_body: req.body.q_body,
     writer_name: req.body.writer_name,
   });
+  res.header({
+    "Access-Control-Allow-Origin": "*",
+  });
   try {
     const savedQuestion = await question.save();
-    res.header({
-      "Access-Control-Allow-Origin": "*",
-    });
     res.json(savedQuestion);
   } catch (err) {
     res.json({ message: err });
