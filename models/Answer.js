@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const AnswerSchema = mongoose.Schema({
   ques_id: {
     type: mongoose.Schema.Types.ObjectId
-  }
+  },
   a_body: {
     type: String,
     required: true,
