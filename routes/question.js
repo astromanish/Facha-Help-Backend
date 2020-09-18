@@ -24,4 +24,24 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.patch("/:ques_id", async (req, res) => {
+  try {
+    const updatedQues = await Question.updateOne(
+      {
+        _id: req.params.ques_id,
+      },
+      { $set: { q_body: req.body.q_body } }
+    );
+    res.json(updatedQues);
+  } catch (err) {
+    res.json({ message: err });
+  }
+});
+
+router.delete("/:ques_id", async (req, res) => {
+  try {
+    const deletedQues = await Question.remove({ _id: req.params.ques_id });
+    res.json(deletedQues);
+  } catch (err) {}
+});
 module.exports = router;
