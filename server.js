@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const indexRoute = require("./routes/index");
 const questionRoute = require("./routes/question");
+const answerRoute = require("./routes/answer");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use("/", indexRoute);
 app.use("/questions", questionRoute);
+app.use("/answers", answerRoute);
 
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
