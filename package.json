@@ -2,6 +2,9 @@
   "name": "facha-help-backend",
   "version": "1.0.0",
   "description": "",
+  "engines": {
+    "node": "12.18.3"
+  },
   "main": "server.js",
   "scripts": {
     "start": "node server",
