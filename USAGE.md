@@ -38,4 +38,4 @@ Make a PATCH request to [https://facha-help.herokuapp.com/(question-id)/answers]
 
 Make a DELETE request to [https://facha-help.herokuapp.com/(question-id)/answers] with answer id in request body.
 
-#### For more details on what's in that request body and JSON data obtained. Make request and see yourself (kuch khud bhi to kro ..xd). You can refer to Facha Help Frontend and Backend repo. on my profile for more insights.
+#### For more details on what's in that request body and JSON data obtained. Make request and see yourself (kuch khud bhi to kro ..xd). You can refer to Facha Help Frontend repo. on my profile for more insights.
