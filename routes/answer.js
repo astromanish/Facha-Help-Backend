@@ -16,7 +16,9 @@ router.post("/:ques_id", async (req, res) => {
     a_body: req.body.a_body,
     writer_name: req.body.writer_name,
     ques_id: req.params.ques_id,
+    date_created: req.body.date_created,
   });
+
   try {
     const savedAns = await answer.save();
     res.json(savedAns);
@@ -47,6 +49,6 @@ router.delete("/:ques_id/:ans_id", async (req, res) => {
       _id: req.params.ans_id,
     });
     res.json(deletedAns);
-  } catch (err) {}
+  } catch (err) { }
 });
 module.exports = router;

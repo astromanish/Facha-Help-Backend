@@ -15,6 +15,7 @@ router.post("/", async (req, res) => {
   const question = new Question({
     q_body: req.body.q_body,
     writer_name: req.body.writer_name,
+    date_created: req.body.date_created,
   });
   try {
     const savedQuestion = await question.save();
@@ -42,6 +43,6 @@ router.delete("/:ques_id", async (req, res) => {
   try {
     const deletedQues = await Question.remove({ _id: req.params.ques_id });
     res.json(deletedQues);
-  } catch (err) {}
+  } catch (err) { }
 });
 module.exports = router;

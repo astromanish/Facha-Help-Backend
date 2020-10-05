@@ -14,7 +14,6 @@ const AnswerSchema = mongoose.Schema({
   },
   date_created: {
     type: Date,
-    default: Date.now(),
   },
 });
 
