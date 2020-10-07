@@ -1,20 +1,22 @@
 const mongoose = require("mongoose");
 
-const AnswerSchema = mongoose.Schema({
-  ques_id: {
-    type: mongoose.Schema.Types.ObjectId,
+const AnswerSchema = mongoose.Schema(
+  {
+    ques_id: {
+      type: mongoose.Schema.Types.ObjectId,
+    },
+    a_body: {
+      type: String,
+      required: true,
+    },
+    writer_name: {
+      type: String,
+      required: true,
+    },
   },
-  a_body: {
-    type: String,
-    required: true,
-  },
-  writer_name: {
-    type: String,
-    required: true,
-  },
-  date_created: {
-    type: Date,
-  },
-});
+  {
+    timestamps: true,
+  }
+);
 
 module.exports = mongoose.model("Answer", AnswerSchema);
